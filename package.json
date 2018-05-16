@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "test": "ng test",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
@@ -21,7 +22,10 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "@types/jest": "^22.2.3",
     "core-js": "^2.4.1",
+    "jest": "^22.4.3",
+    "jest-preset-angular": "^5.2.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -45,5 +49,18 @@
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "html"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/e2e/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupJest.ts"
   }
 }
